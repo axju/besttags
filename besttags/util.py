@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from random import shuffle
 
 
 def merge(tags, weights=None):
@@ -18,6 +19,12 @@ def merge(tags, weights=None):
 
 
 def limit(s, n=30):
+    # first shuffel the data
+    keys = list(s.keys())
+    shuffle(keys)
+    s = {key: s[key] for key in keys}
+
+    # now sort them
     sort = [i[0] for i in sorted(s.items(), key=lambda k: k[1], reverse=True)]
     return sort[:n]
 
