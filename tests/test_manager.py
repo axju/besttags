@@ -32,8 +32,6 @@ class TestManager(unittest.TestCase):
         best2 = Manager(kind='test', fix=['a1', 'a2'], limit=4)
         tags2 = list(best2('t1', 't2', 't3'))
         self.assertEqual(len(tags2), 4)
-        self.assertIn('t1', tags2)
-        self.assertNotIn('e', tags2)
 
 
 if __name__ == '__main__':
