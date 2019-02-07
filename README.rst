@@ -19,6 +19,16 @@ Install
 
 Command-line
 ------------
+
+.. code-block:: shell
+
+  $ best-tags coding python programmer --fix fullstackhero
+  
+  #fullstackhero #coding #programming #programmer #html #css #javascript #developer
+  #code #webdeveloper #coder #webdesign #webdevelopment #technology #php #java 
+  #software #tech #python #computer #computerscience #development #codinglife 
+  #linux #programmers #softwaredeveloper #bhfyp #web #webdesigner #c
+
 See the help for more informations
 
 .. code-block:: shell
