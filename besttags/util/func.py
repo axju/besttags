@@ -21,7 +21,7 @@ def merge_dict(tags):
     """
     Marge a list of tags-dict.
     """
-    n = len(tags)
+    n = float(len(tags))
     stat = {}
     for tag in tags:
         for t, v in tag.items():
