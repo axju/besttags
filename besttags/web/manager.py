@@ -1,22 +1,15 @@
 # -*- coding: utf-8 -*-
-from besttags.util import merge, limit, Tags
+from besttags.util import merge, limit, BasicManager
 from besttags.web.apis import best_hashtags, ritetag, instatag, displaypurposes
 
 
-class WebManager(object):
+class WebManager(BasicManager):
     """This make great stuff."""
 
     def __init__(self, kind='simple', limit=30, weights=[], fix=[]):
+        super(WebManager, self).__init__(limit=limit, fix=fix)
         self.kind = kind
-        self.limit = limit
         self.weights = weights
-
-        if isinstance(fix, list):
-            self.fix = fix
-        elif isinstance(fix, str):
-            self.fix = [fix]
-        else:
-            raise TypeError("Wrong type for 'fix', only str or list.")
 
         if not isinstance(self.weights, list):
             raise TypeError("The weights should be a list.")
@@ -24,25 +17,10 @@ class WebManager(object):
         if not hasattr(self, self.kind):
             raise TypeError(f"The kind '{self.kind}' is not supported.")
 
-        if self.limit < len(self.fix):
-            raise ValueError("The limit cannot be lower,than the fix tags.")
-
     def __call__(self, *args):
-        self.tags = []
-        for arg in args:
-            if isinstance(arg, list):
-                self.tags += arg
-            elif isinstance(arg, str):
-                self.tags.append(arg)
-
+        super(WebManager, self).__call__(*args)
         tags = getattr(self, self.kind)()
-
-        add = []
-        for f in self.fix:
-            if f not in tags:
-                add.append(f)
-
-        return Tags((add + tags)[:self.limit])
+        return self.get_tags(tags)
 
     def test(self):
         tags = [self.tags for i in range(2)]
