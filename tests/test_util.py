@@ -2,19 +2,19 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from besttags.util import merge, limit, Tags
+from besttags.util import merge_list, limit, Tags
 
 
 class TestUtil(unittest.TestCase):
 
-    def test_merge(self):
+    def test_merge_list(self):
         t1 = ['a', 'b', 'c', 'd']
         t2 = ['b', 'c', 'e']
 
-        r1 = merge([t1, t2])
+        r1 = merge_list([t1, t2])
         self.assertEqual(r1, {'a': 0.5, 'b': 1, 'c': 1, 'd': 0.5, 'e': 0.5})
 
-        r2 = merge([t1, t2], [1, 1])
+        r2 = merge_list([t1, t2], [1, 1])
         self.assertEqual(r2, {'a': 1, 'b': 2, 'c': 2, 'd': 1, 'e': 1})
 
     def test_limit(self):

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from besttags.util import merge, limit, BasicManager
+from besttags.util import BasicManager, merge_list, limit
 from besttags.web.apis import best_hashtags, ritetag, instatag, displaypurposes
 
 
@@ -24,12 +24,12 @@ class WebManager(BasicManager):
 
     def test(self):
         tags = [self.tags for i in range(2)]
-        stat = merge(tags, self.weights)
+        stat = merge_list(tags, self.weights)
         return limit(stat, self.limit)
 
     def simple(self):
         tags = [best_hashtags(t) for t in self.tags]
-        stat = merge(tags, self.weights)
+        stat = merge_list(tags, self.weights)
         return limit(stat, self.limit)
 
     def all(self):
@@ -40,5 +40,5 @@ class WebManager(BasicManager):
                 if t:
                     tags.append(t)
 
-        stat = merge(tags, self.weights)
+        stat = merge_list(tags, self.weights)
         return limit(stat, self.limit)

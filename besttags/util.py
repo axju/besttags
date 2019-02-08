@@ -2,9 +2,9 @@
 from random import shuffle
 
 
-def merge(tags, weights=None):
+def merge_list(tags, weights=None):
     """
-    tags: a list of tags
+    tags: a list of tags-lists
     weights: alist of weights, the sum shuld be 1
     """
     if not weights:
@@ -18,7 +18,23 @@ def merge(tags, weights=None):
     return stat
 
 
+def merge_dict(tags):
+    """
+    Marge a list of tags-dict.
+    """
+    n = len(tags)
+    stat = {}
+    for tag in tags:
+        for t, v in tag.items():
+            stat[t] = stat.get(t, 0) + v/n
+    return stat
+
+
 def limit(s, n=30):
+    """
+    get a dict wir tags as keys and the importent as the value.
+    sorted the element and return a list of tags oth the langth n
+    """
     # first shuffel the data
     keys = list(s.keys())
     shuffle(keys)
