@@ -1,4 +1,4 @@
-from besttags import Manager
+from besttags import WebManager as Manager
 
 # The tags you are interested in.
 tags = ['coder', 'programmers', 'python']

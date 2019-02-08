@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from besttags.util import merge, limit, Tags
-from besttags.apis import best_hashtags, ritetag, instatag, displaypurposes
+from besttags.web.apis import best_hashtags, ritetag, instatag, displaypurposes
 
 
-class Manager(object):
+class WebManager(object):
     """This make great stuff."""
 
     def __init__(self, kind='simple', limit=30, weights=[], fix=[]):

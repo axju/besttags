@@ -46,7 +46,7 @@ setup(
 
     entry_points={
         'console_scripts': [
-            'best-tags=besttags.__main__:main',
+            'besttags-web=besttags.cli:cli_web',
         ],
     },
 

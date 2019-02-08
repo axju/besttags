@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from besttags.apis import best_hashtags
+from besttags.web.apis import best_hashtags
 
 
-class TestUtil(unittest.TestCase):
+class TestApis(unittest.TestCase):
 
     def test_best_hashtags(self):
         t1 = best_hashtags('coding')

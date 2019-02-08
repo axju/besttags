@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from besttags.manager import Manager
+from besttags.web.manager import WebManager as Manager
 
 
 class TestManager(unittest.TestCase):

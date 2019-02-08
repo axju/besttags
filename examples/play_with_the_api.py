@@ -1,5 +1,4 @@
-from besttags import Manager
-from besttags.apis import best_hashtags, ritetag, instatag, displaypurposes
+from besttags.web.apis import best_hashtags, ritetag, instatag, displaypurposes
 
 #print(best_hashtags('coding'))
 #print(ritetag('coding'))
