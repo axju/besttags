@@ -16,7 +16,7 @@ def cli_web():
                         help="Some fix tags")
 
     parser.add_argument('--kind', type=str, default='simple',
-                        choices=['simple', 'all', 'test'],
+                        choices=['simple', 'all', 'test', 'displaypurposes'],
                         help="Different types of how the tags are determined")
 
     parser.add_argument('--file', type=str,

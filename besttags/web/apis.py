@@ -43,8 +43,10 @@ def instatag(tag):
         return [s.strip(' #') for s in tags.split()]
 
 
-def displaypurposes(tag):
+def displaypurposes(tag, kind='list'):
     r = get(f'https://d212rkvo8t62el.cloudfront.net/tag/{tag}')
     if r.status_code == 200:
         data = r.json()
-        return [s['tag'] for s in data.get('results', [])]
+        if kind == 'list':
+            return [s['tag'] for s in data.get('results', [])]
+        return {s['tag']: s['absRelevance'] for s in data.get('results', [])}

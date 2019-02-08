@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from besttags.util import BasicManager, merge_list, limit
+from besttags.util import BasicManager, merge_list, merge_dict, limit
 from besttags.web.apis import best_hashtags, ritetag, instatag, displaypurposes
 
 
@@ -41,4 +41,9 @@ class WebManager(BasicManager):
                     tags.append(t)
 
         stat = merge_list(tags, self.weights)
+        return limit(stat, self.limit)
+
+    def displaypurposes(self):
+        tags = [displaypurposes(t, kind='dict') for t in self.tags]
+        stat = merge_dict(tags)
         return limit(stat, self.limit)
