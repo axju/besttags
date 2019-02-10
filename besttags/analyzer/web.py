@@ -1,14 +1,14 @@
 from besttags.util.func import merge_list, merge_dict, limit
-from besttags.manager.basic import BasicManager
+from besttags.analyzer.basic import BasicAnalyzer
 from besttags.util.apis import (best_hashtags, ritetag,
                                 instatag, displaypurposes)
 
 
-class WebManager(BasicManager):
+class WebAnalyzer(BasicAnalyzer):
     """This make great stuff."""
 
     def __init__(self, kind='simple', limit=30, weights=[], fix=[]):
-        super(WebManager, self).__init__(limit=limit, fix=fix)
+        super(WebAnalyzer, self).__init__(limit=limit, fix=fix)
         self.kind = kind
         self.weights = weights
 
@@ -19,7 +19,7 @@ class WebManager(BasicManager):
             raise TypeError(f"The kind '{self.kind}' is not supported.")
 
     def __call__(self, *args):
-        super(WebManager, self).__call__(*args)
+        super(WebAnalyzer, self).__call__(*args)
         tags = getattr(self, self.kind)()
         return self.get_tags(tags)
 

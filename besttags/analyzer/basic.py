@@ -1,7 +1,7 @@
 from besttags.util.cls import Tags
 
 
-class BasicManager(object):
+class BasicAnalyzer(object):
 
     def __init__(self, limit=30, fix=[]):
         self.limit = limit

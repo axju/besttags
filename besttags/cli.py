@@ -1,5 +1,5 @@
 import argparse
-from besttags.manager.web import WebManager
+from besttags.analyzer.web import WebAnalyzer
 
 
 def cli_web():
@@ -33,7 +33,7 @@ def cli_web():
         'kind': args.kind,
     }
 
-    best = WebManager(**values)
+    best = WebAnalyzer(**values)
     result = best(args.tags)
 
     if args.list:

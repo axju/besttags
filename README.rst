@@ -47,28 +47,28 @@ The simple one-liner. It will save the best hashtags for the given tags in a fil
 
 .. code-block:: python
 
-  from besttags import WebManager as Manager
+  from besttags import WebAnalyzer as Analyzer
 
   # The tags you are interested in.
   tags = ['coder', 'programmers', 'python']
 
-  Manager()(tags).save('best_hashtags.txt')
+  Analyzer()(tags).save('best_hashtags.txt')
 
 You can change the default settings and add additional tags and use print()
 to show the tags
 
 .. code-block:: python
 
-  Manager(limit=10, fix=['fullstackhero'])(tags).save('10_best_hashtags.txt')
+  Analyzer(limit=10, fix=['fullstackhero'])(tags).save('10_best_hashtags.txt')
 
-  print(Manager()(tags))
+  print(Analyzer()(tags))
 
-Use the Manager to create an object, which you can use multiple times. It is
+Use the Analyzer to create an object, which you can use multiple times. It is
 callable and allows a list or single strings.
 
 .. code-block:: python
 
-  best = Manager(fix=['fullstackhero'])
+  best = Analyzer(fix=['fullstackhero'])
 
   best('computer', 'instagood')
   best(['coder', 'programmers', 'python'])

@@ -1,4 +1,4 @@
-from besttags import DataManager, FileManager
+from besttags import DataAnalyzer, FileAnalyzer
 import json
 
 data = {
@@ -21,8 +21,8 @@ data = {
 #    json.dump(data, f, indent=4)
 
 
-#best = DataManager(data=data)
-#best = DataManager(data=data)
-for best in [DataManager(), FileManager()]:
+#best = DataAnalyzer(data=data)
+#best = DataAnalyzer(data=data)
+for best in [DataAnalyzer(), FileAnalyzer()]:
     result = best('python', 'linux')
     print(result)

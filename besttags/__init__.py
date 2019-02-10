@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from besttags.__about__ import __author__,  __email__, __version__
-from besttags.manager.web import WebManager
-from besttags.manager.local import DataManager, FileManager
+from besttags.analyzer.web import WebAnalyzer
+from besttags.analyzer.local import DataAnalyzer, FileAnalyzer
 
 __all__ = [
-    'WebManager', 'DataManager', 'FileManager',
+    'WebAnalyzer', 'DataAnalyzer', 'FileAnalyzer',
     '__author__', '__email__', '__version__'
 ]
