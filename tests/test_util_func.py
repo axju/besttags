@@ -1,11 +1,9 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 import unittest
 
-from besttags.util import merge_list, limit, Tags
+from besttags.util.func import merge_list, limit
 
 
-class TestUtil(unittest.TestCase):
+class TestUtilFunc(unittest.TestCase):
 
     def test_merge_list(self):
         t1 = ['a', 'b', 'c', 'd']
@@ -24,13 +22,6 @@ class TestUtil(unittest.TestCase):
 
         t2 = limit(s1, n=2)
         self.assertEqual(len(t2), 2)
-
-    def test_Tags(self):
-        tags = Tags(['a', 'b', 'c', 'd'])
-        self.assertEqual(str(tags), '#a #b #c #d')
-        self.assertEqual(len(tags), 4)
-        self.assertIn('a', tags)
-        self.assertNotIn('e', tags)
 
 
 if __name__ == '__main__':

@@ -1,8 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 import unittest
-
-from besttags.web.manager import WebManager as Manager
+from besttags.manager.web import WebManager as Manager
 
 
 class TestManager(unittest.TestCase):

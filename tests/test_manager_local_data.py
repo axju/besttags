@@ -1,21 +1,34 @@
 import unittest
-import os
-from besttags.local.manager import FileManager
-from besttags.util import Tags
+from besttags.manager.local import DataManager
+from besttags.util.cls import Tags
 
 
-filename = os.path.join(os.path.dirname(__file__), 'test_data.json')
+data = {
+    "coding": {
+        "programming": 0.9,
+        "software": 0.6,
+        "linux": 0.4
+    },
+    "linux": {
+        "coding": 1,
+        "os": 0.5
+    },
+    "python": {
+        "coding": 0.8,
+        "programmer": 0.6
+    }
+}
 
 
-class TestFileManager(unittest.TestCase):
+class TestDataManager(unittest.TestCase):
 
     def test_call(self):
-        result = FileManager(filename=filename)('python', 'linux')
+        result = DataManager(data=data)('python', 'linux')
         self.assertEqual(len(result), 5)
         self.assertIn('os', result)
 
     def test_limit(self):
-        result = FileManager(filename=filename, limit=4)('python', 'linux', 'coding')
+        result = DataManager(data=data, limit=4)('python', 'linux', 'coding')
         self.assertEqual(len(result), 4)
         self.assertIn('python', result)
         self.assertIn('linux', result)
@@ -26,10 +39,8 @@ class TestFileManager(unittest.TestCase):
         self.assertNotIn('os', result)
 
     def test_defaults(self):
-        result = FileManager()('python', 'linux')
+        result = DataManager()('python', 'linux')
         self.assertIsInstance(result, Tags)
-
-
 
 
 if __name__ == '__main__':

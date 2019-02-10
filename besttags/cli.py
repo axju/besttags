@@ -1,5 +1,5 @@
 import argparse
-from besttags.web.manager import WebManager
+from besttags.manager.web import WebManager
 
 
 def cli_web():

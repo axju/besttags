@@ -1,8 +1,9 @@
 import os
 from json import load as json_load
-from besttags.util import BasicManager, merge_dict, limit
-from besttags.data.sample import SAMPLE_DATA
+from besttags.util.func import merge_dict, limit
+from besttags.manager.basic import BasicManager
 
+from besttags.data.sample import SAMPLE_DATA
 SAMPLE_JSON = os.path.join(os.path.dirname(__file__), '../data/sample.json')
 
 

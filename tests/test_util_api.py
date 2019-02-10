@@ -1,8 +1,6 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 import unittest
 
-from besttags.web.apis import best_hashtags
+from besttags.util.apis import best_hashtags
 
 
 class TestApis(unittest.TestCase):

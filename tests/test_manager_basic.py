@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import unittest
-from besttags.util import Tags
-from besttags.util import BasicManager as Manager
+from besttags.manager.basic import BasicManager as Manager
+from besttags.util.cls import Tags
 
 
 class TestBasicManager(unittest.TestCase):

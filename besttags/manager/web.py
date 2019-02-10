@@ -1,6 +1,7 @@
-# -*- coding: utf-8 -*-
-from besttags.util import BasicManager, merge_list, merge_dict, limit
-from besttags.web.apis import best_hashtags, ritetag, instatag, displaypurposes
+from besttags.util.func import merge_list, merge_dict, limit
+from besttags.manager.basic import BasicManager
+from besttags.util.apis import (best_hashtags, ritetag,
+                                instatag, displaypurposes)
 
 
 class WebManager(BasicManager):

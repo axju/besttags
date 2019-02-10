@@ -1,4 +1,4 @@
-from besttags.local.manager import DataManager, FileManager
+from besttags import DataManager, FileManager
 import json
 
 data = {
